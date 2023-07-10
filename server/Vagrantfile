@@ -46,10 +46,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         app.vm.synced_folder ".", "/vagrant", disabled: false
         app.vm.network :private_network, ip: "192.168.56.3"     
         app.vm.provision "shell", inline: <<-SHELL
-        sudo apt install ansible -y
+        apt install ansible -y
         cp /vagrant/* /home/vagrant/
         # ls -lah /home/vagrant/.ssh/
         ssh-keygen -t rsa -b 4096 -N '' -f '/home/vagrant/.ssh/id_rsa'
+        # to use the 'ssh' connection type with passwords
+        apt install sshpass -y
         SHELL
     end
 end
