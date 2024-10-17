@@ -12,7 +12,7 @@
 ### Windows WSL2
 - Install Vagrant on both the Linux machine on WSL and Windows
 - In PowerShell run: `vagrant plugin install virtualbox_WSL2`
-- also export these things:
+- In WSL linux also export these things:
   ```shell
   export VAGRANT_WSL_ENABLE_WINDOWS_ACCESS="1"
   export VAGRANT_WSL_WINDOWS_ACCESS_USER_HOME_PATH="/mnt/c/Users/username/"
