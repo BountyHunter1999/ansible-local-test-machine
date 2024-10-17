@@ -7,11 +7,21 @@
 
 ### Windows
 
-- For the windows machine without wsl2, I create a separate ansible control machine and work from there
+- For the Windows machine without wsl2, I create a separate ansible control machine and work from there
+
+### Windows WSL2
+- Install Vagrant on both the Linux machine on WSL and Windows
+- In PowerShell run: `vagrant plugin install virtualbox_WSL2`
+- also export these things:
+  ```shell
+  export VAGRANT_WSL_ENABLE_WINDOWS_ACCESS="1"
+  export VAGRANT_WSL_WINDOWS_ACCESS_USER_HOME_PATH="/mnt/c/Users/username/"
+  ```
+- with this, we can use the ansible
 
 ### Linux
 
-- For Linux, vagrant provision with ansible might be easier
+- For Linux, vagrant provision with Ansible might be easier
 
 ```ruby
 Vagrant.configure("2") do |config|
